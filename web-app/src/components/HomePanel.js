@@ -22,11 +22,13 @@ class HomePanel extends Component {
                     </div>
                 )}/>
 
-                <Route exact path="/tickets/:id" render={(props) => (
+                <Route exact path="/tickets" render={(props) => (
                     <div>
+
                         <TicketList {...props}/>
                     </div>
                 )}/>
+
             </div>
         );
     }

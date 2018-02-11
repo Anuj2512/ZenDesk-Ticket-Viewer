@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import * as API from '../Api/Api';
 
 import Ticket from './Ticket';
 import * as API from '../Api/Api';
@@ -11,27 +10,45 @@ class TicketList extends Component{
     }
 
     componentWillMount(){
+        API.getTicketList(this.state.page)
+            .then((resData) => {                
+                this.setState({
+                    tickets : resData.tickets
+                })
+            });
+    }
 
-        var url = this.props.location.pathname;
-        console.log(url.substr(url.lastIndexOf('/') + 1));
-        var page = url.substr(url.lastIndexOf('/') + 1);
-        this.setState({
-            page: page 
-        })
+    componentWillUpdate(nextProps,nextState){
 
-        API.getTicketList(page)
-            .then((resData) => {
-                
+        console.log(this.state);
+        console.log(nextState);
+        if(this.state.page != nextState.page){
+            API.getTicketList(nextState.page)
+            .then((resData) => {                
                 this.setState({
                     tickets : resData.tickets
                 })
                 console.log(resData);
             });
+        }
     }
 
-    render(){
 
-        console.log(this.state.shortenedURL)
+    onPreviousClicked = (event) => {        
+        var previousPage = this.state.page - 1;
+        this.setState({
+            page: previousPage
+        });
+    };
+
+    onNextClicked = (event) => {      
+        var nextPage = this.state.page + 1;
+        this.setState({
+            page: nextPage
+        });          
+    };
+
+    render(){
 
         let rows = [];
         for (var i = 0; i < this.state.tickets.length; i++){
@@ -40,7 +57,9 @@ class TicketList extends Component{
         }
         
         return(
-            <div>                
+            <div className="offset-md-2 col-md-8">      
+            <button onClick={(event) => this.onPreviousClicked(event)}>Previous</button> 
+            <button onClick={(event) => this.onNextClicked(event)}>Next</button>
                 {rows}
             </div>
         )
