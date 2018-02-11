@@ -22,8 +22,8 @@ router.route('/:page')
             res.status(200).json(response.data);
 		})
 		.catch(function (error) {
-			console.log("This is error calling Composer API", error);
-			res.status(500).json({error: "Internal server error."})
+			console.log("This is error calling Composer API");
+			res.status(400).json({error: "ZenDesk API is unavailable or the response is invalid."})
 		});	
 
     });

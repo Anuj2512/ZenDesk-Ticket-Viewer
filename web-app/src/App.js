@@ -16,8 +16,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="row App-header">
-          <div className="col col-md-4 offset-md-2">ZenDesk Ticket Viewer</div>
+        <div className="App-header">
+          ZenDesk Ticket Viewer
         </div> 
         <BrowserRouter>
           <HomePanel/>

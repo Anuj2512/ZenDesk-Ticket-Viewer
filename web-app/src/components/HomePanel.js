@@ -18,13 +18,6 @@ class HomePanel extends Component {
             <div className="container-fluid">
                 <Route exact path="/" render={(props) => (
                     <div>
-                        <button onClick={(event) => this.onLoadTickets(event)}> Load Tickets </button>                        
-                    </div>
-                )}/>
-
-                <Route exact path="/tickets" render={(props) => (
-                    <div>
-
                         <TicketList {...props}/>
                     </div>
                 )}/>

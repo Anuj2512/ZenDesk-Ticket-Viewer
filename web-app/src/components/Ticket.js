@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import * as API from '../Api/Api';
 
 class Ticket extends Component{
     state = {
@@ -14,14 +13,14 @@ class Ticket extends Component{
             tags += "#" + this.props.tags[i] + " "
 
         return(
-            <div className="shortUrlInfo row">   
+            <div className="ticketInfo row">   
         
                 <div className="col-md-10"> 
                     <div><span className="subjectName"> Ticket Id:  </span> {this.props.id} </div>                            
                     <div><span className="subjectName"> Subject:    </span> {this.props.subject}</div>                
                 </div>
                 <div className="col-md-2">
-                    <button className="btn btn-primary" type="button" data-toggle="collapse" data-target={idWithHash} aria-expanded="false" aria-controls={id}>View</button>
+                    <button className="btn btn-primary" type="button" data-toggle="collapse" data-target={idWithHash} aria-expanded="false" aria-controls={id}>Show / Hide</button>
                 </div>
                     
                 <div className="collapse moreInfoBox" id={id}>
