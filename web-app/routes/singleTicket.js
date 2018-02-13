@@ -4,8 +4,6 @@ var ejs = require('ejs');
 
 function singleTicket(req, res){
 
-    console.log(req.params.pageNo);
-
     var config = {
         auth: {
             username: process.env.USERNAME,
@@ -22,8 +20,7 @@ function singleTicket(req, res){
             }
             // render or error
             else {                
-                res.status(404).send('Page Not Found');
-                console.log(err);
+                res.status(404).send('Page Not Found');                
             }
        });
 

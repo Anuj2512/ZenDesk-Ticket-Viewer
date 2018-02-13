@@ -2,9 +2,7 @@ var axios  = require ('axios');
 var ejs = require('ejs');
 
 
-function tickets(req, res){
-
-    console.log(req.params.pageNo);
+function tickets(req, res){    
 
     if(req.params.pageNo === undefined)
         req.params.pageNo = 1;
@@ -30,8 +28,7 @@ function tickets(req, res){
             }
             // render or error
             else {
-                res.status(404).send('Page Not Found');
-                console.log(err);
+                res.status(404).send('Page Not Found');                
             }
        });
 
