@@ -31,3 +31,15 @@ Name: Anuj Chaudhari (chaudhari.anuj93@gmail.com)
 ```javascript
     http://localhost:3000
 ```
+
+
+## Screenshots
+
+![Alt text](/images/list_view.png?raw=true "List View")
+
+![Alt text](/images/single_ticket_view.png?raw=true "Single Ticket View")
+
+
+## Unit Tests
+
+![Alt text](/images/unit_test.png?raw=true "Unit Test")

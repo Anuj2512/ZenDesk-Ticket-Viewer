@@ -20,7 +20,7 @@ function singleTicket(req, res){
             }
             // render or error
             else {                
-                res.status(404).send('Page Not Found');                
+                res.status(404).send('404 Page Not Found');                
             }
        });
 
@@ -28,7 +28,7 @@ function singleTicket(req, res){
 
     })
     .catch(function (error) {        
-        res.status(404).send('API not available or Invalid Credential or Invalid Ticket Id Requested.');
+        res.status(404).send('400 invalid ticket id requested or API not available');
     });	
 }
 

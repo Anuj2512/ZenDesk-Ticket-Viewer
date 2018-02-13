@@ -28,13 +28,13 @@ function tickets(req, res){
             }
             // render or error
             else {
-                res.status(404).send('Page Not Found');                
+                res.status(404).send('404 Page Not Found');                
             }
        });
 
     })
     .catch(function (error) {        
-        res.status(404).send('API not available or invalid page requested.');
+        res.status(404).send('400 invalid page requested or API not available');
     });	
 }
 
