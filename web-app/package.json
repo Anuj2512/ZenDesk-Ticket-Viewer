@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "dotenv": "^5.0.0",
+    "ejs": "*",
     "express": "~4.13.4",
-    "nodemon": "^1.14.12",
-    "ejs": "*"
+    "nodemon": "^1.14.12"
   },
   "author": "",
   "license": "ISC"
