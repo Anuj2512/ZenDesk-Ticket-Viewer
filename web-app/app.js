@@ -1,19 +1,17 @@
 var express = require('express');
 var http = require('http');
-var bodyParser = require('body-parser');  
 var routes = require('./routes/routes');
+var path = require('path');
 
 var app = express();
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});  
+  
 app.set('port', process.env.PORT || 3002);
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
-app.use('/tickets/', routes);
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', routes.home);
 
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
